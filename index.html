@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finest collection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">FINEST COLLECTION</div>
+    <input type="text" id="searchBar" placeholder="search product...">
+    <div class="header-icons">
+      <button id="accountBtn">Account</button>
+      <button id="cartBtn">Cart 🛒 (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h1>AVILABLE PRODUCTS</h1>
+      <ul>
+        <li><button onclick="filterCategory('All')">All</button></li>
+        <li><button onclick="filterCategory('Bed sheet')">BED SHEET</button></li>
+        <li><button onclick="filterCategory('Mop bucket/Standing mop')">MOP BUCKET/STANDING MOP</button></li>
+        <li><button onclick="filterCategory('Cornershelve')">CORNERSHELVE</button></li>
+        <li><button onclick="filterCategory('Kitchen mat')">KITCHEN MAT</button></li>
+        <li><button onclick="filterCategory('Storage rack')">STORAGE RACK</button></li>
+         <li><button onclick="filterCategory('Dry line')">DRY LINE</button></li>
+         <li><button onclick="filterCategory('Bathroom mat')">BATHROOM MAT</button></li>
+         <li><button onclick="filterCategory('Duvet')">DUVET</button></li>
+        <li><button onclick="filterCategory('Pluffy Duvet')">PLUFFY DUVET</button></li>
+        <li><button onclick="filterCategory('Pluffy center mat')">PLUFFY CENTER MAT</button></li>
+        <li><button onclick="filterCategory('Center mat')">CENTER MAT</button></li>
+         <li><button onclick="filterCategory('Mattress protector')">MATTRESS PROTECTOR</button></li>
+
+      </ul>
+    </aside>
+
+ 
+
+      <section id="products" class="products"></section>
+    </main>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkoutModal" class="modal">
+    <div class="modal-content">
+      <span id="closeCheckout" class="close">&times;</span>
+      
+      <!-- Step 1: Review Cart -->
+      <div id="stepCart" class="checkout-step">
+        <h2>Review Your Cart </h2>
+        <div id="cartItems"></div>
+        <button id="toShipping">Confirm Order</button>
+      </div>
+
+      <!-- Step 2: Shipping -->
+      <div id="stepShipping" class="checkout-step" style="display:none;">
+        <h1>Shipping Information and kindly remember to take a screenshoot📸</h1>
+        <form id="shippingForm">
+          <label>Name: <input type="text" required></label><br>
+          <label>Address: <input type="text" required></label><br>
+          <label>City: <input type="text" required></label><br>
+          <label>Phone: <input type="number" required></label><br>
+          <button type="submit">Continue to Review order</button>
+        </form>
+      </div>
+
+      <!-- Step 3: Payment -->
+      <div id="stepPayment" class="checkout-step" style="display:none;">
+        <h2>Payment</h2>
+        <form id="paymentForm">
+          <label><input type="radio" name="payment" value="cod" checked> proceed to checkout</label><br>
+          <button type="submit">Place Order</button>
+        </form>
+      </div>
+
+      <!-- Step 4: Confirmation -->
+      <div id="stepConfirm" class="checkout-step" style="display:none;">
+        <h1>🎉 Thank you please take a screenshot of your order!</h1>
+        <p>Your order has been placed successfully.</p>
+        <div id="confirmItems"></div>
+        <button id="closeConfirm">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
